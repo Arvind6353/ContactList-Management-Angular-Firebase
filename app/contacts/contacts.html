@@ -1,0 +1,93 @@
+
+	<br/><br/>
+	<div class="container">
+
+		<h1 class="text-center"> Contact List Management </h1>
+		<br/>
+		
+		<div class="row">
+
+			<div class="col-md-6">
+
+			<div class="panel panel-primary">
+
+			<div class="panel-heading">
+				
+				Add Contact Form 
+			</div>	
+
+			 <div class="panel-body">	
+				<form>
+				  <div class="form-group">
+				    <label for="name">Name</label>
+				    <input type="text" class="form-control" id="name" placeholder="name" ng-model="contactobj.name">
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="email">Email address</label>
+				    <input type="email" class="form-control" id="email" placeholder="Email" ng-model="contactobj.email">
+				  </div>
+				  
+				  <div class="form-group">
+				    <label for="mobile">Mobile no</label>
+				    <input type="text" class="form-control" id="mobile" placeholder="mobile" ng-model="contactobj.mobile">
+				  </div>
+				 	
+				  <button class="btn btn-success btn-block" ng-show="isAdd"  ng-click="addContact()">Add</button>
+
+
+				  <button class="btn btn-warning btn-block" ng-show="isEdit"  ng-click="editContact()">Edit</button>
+
+				</form>
+
+				</div>	
+			</div>	
+
+			</div>
+			
+			<div class="col-md-6" ng-cloak>
+
+
+				<div class="panel panel-primary">
+
+					<div class="panel-heading">
+						
+						 Contact Details 
+					</div>	
+				
+					<div class="panel-body">
+						<table class="table table-striped">
+
+							<tr>
+								<th> Name</th>
+								<th> Email </th>
+								<th> Mobile </th>
+								<th></th>
+							</tr>	
+
+							<tr ng-repeat="contact in contacts">
+
+								<td>{{contact.name}}</td>
+								<td>{{contact.email}}</td>
+								<td>{{contact.mobile}}</td>
+								<td><BUTTON class="btn btn-primary btn-xs" ng-click="doEdit(contact)">Edit </BUTTON>
+
+
+									&nbsp;
+									&nbsp;&nbsp;
+									<BUTTON class="btn btn-danger btn-xs" ng-click="deleteContact(contact)">Delete </BUTTON>
+
+								</td>
+
+							</tr>	
+
+						</table>	
+					</div>
+					</div>
+			 </div>	
+
+		</div>
+
+	</div>
+
+
